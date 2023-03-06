@@ -1,16 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 function App() {
   const [data, setData] = useState({});
   const [location, setLocation] = useState("");
+  const [currentdate, Setdate] = useState(new Date());
 
   //api_key c26be92611a400dc2fa15b4e5b2945e9
 
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=c26be92611a400dc2fa15b4e5b2945e9`;
 
+  setInterval(() => {
+    Setdate(new Date());
+  }, 1000);
 
-  const date=new Date();
-  
   const searchLocation = (event) => {
     if (event.key === "Enter") {
       axios.get(url).then((response) => {
@@ -31,7 +33,10 @@ function App() {
           placeholder="Enter Location"
           type="text"
         />
-        <div className="app__date">Time:{date.toLocaleTimeString()}   Date:{date.toLocaleDateString()}</div>
+        <div className="app__date">
+          {currentdate.toLocaleTimeString()} Date:
+          {currentdate.toLocaleDateString()}
+        </div>
       </div>
       <div className="container">
         <div className="top">
