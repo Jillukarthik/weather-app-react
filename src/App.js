@@ -8,6 +8,9 @@ function App() {
 
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=c26be92611a400dc2fa15b4e5b2945e9`;
 
+
+  const date=new Date();
+  
   const searchLocation = (event) => {
     if (event.key === "Enter") {
       axios.get(url).then((response) => {
@@ -28,6 +31,7 @@ function App() {
           placeholder="Enter Location"
           type="text"
         />
+        <div className="app__date">Time:{date.toLocaleTimeString()}   Date:{date.toLocaleDateString()}</div>
       </div>
       <div className="container">
         <div className="top">

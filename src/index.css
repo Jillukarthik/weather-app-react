@@ -68,7 +68,7 @@ h1 {
 
 .container {
   max-width: 700px;
-  height: 550px;
+  /* height: 550px; */
   margin: auto;
   padding: 0 1rem;
   position: relative;
@@ -104,4 +104,19 @@ h1 {
 
 .bold {
   font-weight: 700;
+}
+
+
+.app__date{
+  text-align: end;
+  margin-top: -32px;
+
+}
+
+@media only screen and (max-width: 718px) {
+
+.app__date{
+  text-align: center;
+  margin-top: 12px !important;
+}
 }
