@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 function App() {
   const [data, setData] = useState({});
-  const [location, setLocation] = useState("chennai");
+  const [location, setLocation] = useState("");
   const [currentdate, Setdate] = useState(new Date());
 
   //api_key c26be92611a400dc2fa15b4e5b2945e9
